@@ -61,9 +61,11 @@ error
 
 ## 订阅Ticker级别数据
 
+推送频率:1000ms
+
 返回的数据为最新24h内成交数据，包括当前最新价格。
 
-- topic:%exchange.market.ticker.%symbols
+- topic:%exchange.market.ticker.%symbol
 + 第一个%s代表交易所，从基础API得到。
 + 第二个%s代表需要订阅的币。
 
@@ -118,6 +120,68 @@ error
     "closePrice": 21911.07
   },
   "ch": "binance.market.ticker.btcusdt",
+  "ts": 1657294293356
+}
+```
+
+</Example>
+
+</Block>
+
+
+<Block>
+
+## 订阅实时价格
+
+推送频率:当交易所撮合交易价格变化后即可推送，极限推送为100ms。
+
+返回的数据为最新市场价格数据。
+
+该订阅不建议单个连接连接过多的币种（3-5个内较好，若比较多分开订阅），以免影响速度。
+
+- topic:%exchange.market.price.%symbol
++ 第一个%s代表交易所，从基础API得到。
++ 第二个%s代表需要订阅的币。
+
+订阅单个币请发下如下json。
+
+```json
+{
+  "method": "subscribe",
+  "args": ["binance.market.price.btcusdt"]
+}
+```
+
+订阅多个币请发下如下json。
+
+```json
+{
+  "method": "subscribe",
+  "args": ["binance.market.price.btcusdt","binance.market.price.dotusdt", ...]
+}
+```
+
+释义:
+
+| 字段名称 |  数据类型  |  描述 |
+|-----|-----|---|
+| ch|string |订阅的channel |
+| ts|long |系统响应时间 |
+| result|[object] | |
+| symbol|string |交易对 |
+| price|float |实时价格 |
+
+<Example>
+
+返回值如下:
+
+```json
+{
+  "result": {
+    "symbol": "btcusdt",
+    "price": 20884.9
+  },
+  "ch": "binance.market.price.btcusdt",
   "ts": 1657294293356
 }
 ```
