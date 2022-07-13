@@ -1,6 +1,6 @@
 ---
 home: true
-title: 我们免费为您提供强大的币安、火币、欧意等交易所集成API
+title: 为您提供强大的币安、火币、欧意等交易所集成API。
 description: 为您提供包括现货合约基础数据、历史行情、实时行情、行情订阅等API的完整API文档、代码范例及测试环境。适合高频交易、策略交易者。
 actionText: 进入文档
 actionLink: /0-overview/

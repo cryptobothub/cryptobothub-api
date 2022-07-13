@@ -18,6 +18,6 @@ binance U本位          | 待支持 |待支持
 
 如果您对该文档有疑问或想跟本人交流可加Telegram讨论组，将第一时间为您解惑。
 
-连接：https://t.me/+I_4wUd1jgndmOTVl
+链接：https://t.me/+I_4wUd1jgndmOTVl
 
 二维码：![Telegram.png](Telegram.png)

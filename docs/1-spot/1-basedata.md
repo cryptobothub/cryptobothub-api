@@ -56,5 +56,3 @@ curl -X GET https://api.cryptobothub.com/api/v1/exchange/base/data/exchange-type
 </Example>
 
 </Block>
-
-
